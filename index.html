@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roberto dos Santos Rocha | Portfólio</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --dark-bg: #2c3e50;
+            --light-text: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--light-bg);
+        }
+        
+        header {
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .profile-info {
+            margin-top: 1rem;
+        }
+        
+        .profile-links {
+            margin-top: 1rem;
+        }
+        
+        .profile-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        .profile-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        nav {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 1rem;
+        }
+        
+        nav ul li a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        section {
+            padding: 3rem 0;
+        }
+        
+        h1, h2, h3 {
+            color: var(--primary-color);
+        }
+        
+        h2 {
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+        
+        h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .educacao-item, .experiencia-item, .habilidades-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .educacao-item h3, .experiencia-item h3 {
+            color: var(--secondary-color);
+        }
+        
+        .periodo {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cargo {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .local {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .descricao {
+            margin-top: 1rem;
+        }
+        
+        .descricao ul {
+            margin-left: 1.5rem;
+        }
+        
+        .habilidades-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .habilidade-categoria h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .habilidade-nivel {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .habilidade-nome {
+            flex: 1;
+        }
+        
+        .nivel-barra {
+            height: 10px;
+            width: 100px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .nivel-preenchimento {
+            height: 100%;
+            background-color: var(--secondary-color);
+        }
+        
+        .qualificacoes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .certificacao-item, .comissao-item, .evento-item {
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .contato-info {
+            margin-bottom: 1rem;
+        }
+        
+        .social-links {
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: var(--light-text);
+            margin: 0 0.5rem;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .habilidades-container, .qualificacoes-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="home">
+        <div class="container">
+            <div class="header-content">
+                <h1>Roberto dos Santos Rocha</h1>
+                <div class="profile-info">
+                    <p>Doutorando em Administração de Empresas | Especialista em Sistemas de Informação</p>
+                </div>
+                <div class="profile-links">
+                    <a href="mailto:rsantos.rocha@gmail.com">rsantos.rocha@gmail.com</a> |
+                    <a href="https://www.linkedin.com/in/rsrocha/" target="_blank">LinkedIn</a> |
+                    <a href="http://lattes.cnpq.br/9501729392764044" target="_blank">Lattes</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#formacao">Formação</a></li>
+            <li><a href="#experiencia">Experiência</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#qualificacoes">Qualificações</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+    
+    <section id="sobre">
+        <div class="container">
+            <h2>Sobre Mim</h2>
+            <div class="about-content">
+                <p>Sou um profissional com formação em Administração e especialização em Sistemas de Informação, atualmente realizando Doutorado em Administração de Empresas pela Fundação Getúlio Vargas (FGV EAESP).</p>
+                <p>Minha pesquisa foca em "Scalable Organizational Agility: Team Adaptability, Self-Organization, and Continuous Improvement", unindo conhecimentos em gestão e tecnologia.</p>
+                <p>Possuo ampla experiência em ambientes acadêmicos, tendo atuado como professor assistente, tutor e coordenador em diversas instituições de ensino superior no Brasil e no exterior.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="formacao" style="background-color: #f0f0f0;">
+        <div class="container">
+            <h2>Formação Acadêmica</h2>
+            
+            <div class="educacao-item">
+                <h3>Doutorado em Administração de Empresas</h3>
+                <p class="periodo">Em andamento</p>
+                <p class="local">Fundação Getúlio Vargas (FGV EAESP), Brasil</p>
+                <p>Título: Scalable Organizational Agility: Team Adaptability, Self-Organization, and Continuous Improvement</p>
+                <p>Orientador: Dr. Otávio Próspero Sanchez</p>
+            </div>
+            
+            <div class="educacao-item">
+                <h3>Mestrado em Sistemas de Informação</h3>
+                <p class="periodo">2010-2012</p>
+                <p class="local">Universidade de São Paulo (USP), Brasil</p>
+                <p>Título: Linha de produto para Gestão de Processos de Negócio incluindo aspectos dinâmicos</p>
+                <p>Orientador: Dr. Marcelo Fantinato</p>
+            </div>
+            
+            <div class="educacao-item">
+                <h3>Especialização em Administração de Sistemas de Informação</h3>
+                <p class="periodo">2007-2009</p>
+                <p class="local">Universidade Federal de Lavras (UFLA), Brasil</p>
+            </div>
+            
+            <div class="educacao-item">
+                <h3>Graduação em Administração</h3>
+                <p class="periodo">2002-2006</p>
+                <p class="local">Faculdade de Tecnologia e Ciências de Vitória da Conquista (FTC), Brasil</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="experiencia">
+        <div class="container">
+            <h2>Experiência Profissional</h2>
+            
+            <div class="experiencia-item">
+                <h3>Fundação Getúlio Vargas (FGV), Brasil</h3>
+                
+                <div class="cargo-info">
+                    <p class="cargo">Assistente Pedagógico, Executive MBA (EMBA)</p>
+                    <p class="periodo">2024-Atual</p>
+                    <div class="descricao">
+                        <ul>
+                            <li>Suporte acadêmico para os cursos de Executive MBA</li>
+                            <li>Atendimento a alunos e professores</li>
+                            <li>Acompanhamento de processos administrativos acadêmicos</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="cargo-info">
+                    <p class="cargo">Teaching Assistant, Mestrado Profissional em Gestão para Competitividade</p>
+                    <p class="periodo">2022-2023</p>
+                    <div class="descricao">
+                        <ul>
+                            <li>Auxiliou na disciplina de Metodologia de Problemas Científicos</li>
+                            <li>Suporte aos alunos e professores</li>
+                            <li>Organização de materiais didáticos e processos de avaliação</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="cargo-info">
+                    <p class="cargo">Professor Assistente, Mestrado Profissional em Gestão Internacional</p>
+                    <p class="periodo">2022</p>
+                    <div class="descricao">
+                        <ul>
+                            <li>Professor Assistente da Disciplina Customer Success Management</li>
+                            <li>Planejamento e acompanhamento de atividades acadêmicas</li>
+                            <li>Suporte ao coordenador da disciplina</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="experiencia-item">
+                <h3>Universidade Federal de São Paulo (UNIFESP), Brasil</h3>
+                <p class="periodo">2022-2024</p>
+                <div class="descricao">
+                    <ul>
+                        <li>Suporte às atividades de ensino, pesquisa e extensão</li>
+                        <li>Apoio na gestão de processos administrativos acadêmicos</li>
+                        <li>Acompanhamento de eventos e reuniões acadêmicas</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="experiencia-item">
+                <h3>Universidade Federal da Bahia (UFBA), Brasil</h3>
+                <p class="periodo">2006-2022</p>
+                
+                <div class="cargo-info">
+                    <p class="cargo">Coordenação do Núcleo de Apoio Acadêmico</p>
+                    <p class="periodo">2013-2014</p>
+                </div>
+                
+                <div class="cargo-info">
+                    <p class="cargo">Assistente em Administração</p>
+                    <div class="descricao">
+                        <ul>
+                            <li>Elaboração de relatórios técnicos sobre produtividade</li>
+                            <li>Participação na elaboração de rotinas e estruturação de serviços</li>
+                            <li>Elaboração de projetos para melhoria dos serviços institucionais</li>
+                            <li>Criação de relatórios, formulários e planilhas eletrônicas para auxílio à tomada de decisões</li>
+                            <li>Registros acadêmicos: matrícula, aproveitamento de estudos, trancamento etc.</li>
+                            <li>Assessoria nas atividades de ensino, pesquisa
