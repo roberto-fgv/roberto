@@ -64,7 +64,7 @@ Pesquisador e profissional na área de Sistemas de Informação e Administraçã
 
 ## 🔗 Links
 
-- **E-mail**: rsantos.rocha@gmail.com
+- **E-mail**: roberto.rocha@fgv.edu.br
 - **LinkedIn**: [linkedin.com/in/rsrocha](https://www.linkedin.com/in/rsrocha/)
 - **Lattes**: [lattes.cnpq.br/9501729392764044](http://lattes.cnpq.br/9501729392764044)
 
